@@ -6,7 +6,7 @@ interface HeaderProps {
 }
 
 const Header = ({ onSignIn, onRegister }: HeaderProps) => {
-  const navItems = ["Profile", "Stock", "Billing", "Plans", "Reports", "Reviews", "Feedback"];
+  const navItems = ["Profile", "Stock", "Customer", "Payment", "Reports", "Sales"];
 
   return (
     <header className="w-full bg-card border-b border-border">
