@@ -25,15 +25,19 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
   }, [isOpen, initialView]);
 
   const handleBack = () => {
-    if (view === "forgotPassword") {
-      setView("signIn");
-    } else if (view === "register") {
-      setView("signIn");
-    }
+    onClose();
   };
 
   const renderSignIn = () => (
-    <div className="space-y-6">
+    <div className="space-y-5">
+      <button
+        onClick={handleBack}
+        className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <ArrowLeft size={16} />
+        <span className="text-sm">Back</span>
+      </button>
+
       <div>
         <h2 className="text-2xl font-bold">
           <span className="text-foreground">Stock</span>
@@ -49,7 +53,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
       <div className="flex border-b border-border">
         <button
           onClick={() => setUserType("user")}
-          className={`flex-1 py-3 text-sm font-medium transition-colors ${
+          className={`flex-1 py-2.5 text-sm font-medium transition-colors ${
             userType === "user"
               ? "text-foreground border-b-2 border-foreground"
               : "text-muted-foreground"
@@ -59,7 +63,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
         </button>
         <button
           onClick={() => setUserType("admin")}
-          className={`flex-1 py-3 text-sm font-medium transition-colors ${
+          className={`flex-1 py-2.5 text-sm font-medium transition-colors ${
             userType === "admin"
               ? "text-foreground border-b-2 border-foreground"
               : "text-muted-foreground"
@@ -69,7 +73,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
         </button>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         {userType === "user" ? (
           <>
             <Input label="Email Id" placeholder="Enter your email" type="email" />
@@ -90,7 +94,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
         <div className="flex items-center justify-center gap-2 text-sm">
           <button
             onClick={() => setView("forgotPassword")}
-            className="text-label-blue hover:underline"
+            className="text-foreground font-semibold hover:underline"
           >
             Forget Password?
           </button>
@@ -107,8 +111,8 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
   );
 
   const renderRegister = () => (
-    <div className="flex gap-8">
-      <div className="flex-1 space-y-6">
+    <div className="flex gap-6">
+      <div className="flex-1 space-y-4 max-h-[70vh] overflow-y-auto pr-2">
         <button
           onClick={handleBack}
           className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
@@ -120,7 +124,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
         <div className="flex border-b border-border">
           <button
             onClick={() => setUserType("user")}
-            className={`flex-1 py-3 text-sm font-medium transition-colors ${
+            className={`flex-1 py-2.5 text-sm font-medium transition-colors ${
               userType === "user"
                 ? "text-foreground border-b-2 border-foreground"
                 : "text-muted-foreground"
@@ -130,7 +134,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
           </button>
           <button
             onClick={() => setUserType("admin")}
-            className={`flex-1 py-3 text-sm font-medium transition-colors ${
+            className={`flex-1 py-2.5 text-sm font-medium transition-colors ${
               userType === "admin"
                 ? "text-foreground border-b-2 border-foreground"
                 : "text-muted-foreground"
@@ -140,8 +144,8 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
           </button>
         </div>
 
-        <div className="space-y-4">
-          <div className="grid grid-cols-3 gap-3">
+        <div className="space-y-3">
+          <div className="grid grid-cols-3 gap-2">
             <Input label="First Name" placeholder="First Name" />
             <Input label="Middle Name" placeholder="Middle Name" />
             <Input label="Last Name" placeholder="Last Name" />
@@ -151,7 +155,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
 
           {userType === "user" ? (
             <>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-2">
                 <Input label="Country" placeholder="Country" />
                 <Input label="City" placeholder="City" />
                 <Input label="State" placeholder="State" />
@@ -163,7 +167,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
             </>
           ) : (
             <>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2">
                 <Input label="GST Number" placeholder="GST Number" />
                 <Input label="Pan Card Number" placeholder="Pan Card Number" />
               </div>
@@ -179,7 +183,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
             {userType === "user" ? "REGISTER AS USER" : "REGISTER AS ADMIN"}
           </Button>
 
-          <p className="text-center text-sm">
+          <p className="text-center text-sm pb-2">
             <span className="text-muted-foreground">Have you already an account? </span>
             <button
               onClick={() => setView("signIn")}
@@ -196,7 +200,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
           <span className="text-foreground">Stock</span>
           <span className="text-primary">Easy</span>
         </h2>
-        <p className="text-muted-foreground text-sm mb-6">
+        <p className="text-muted-foreground text-sm mb-4">
           Now it is very easy to maintain stock.
           <br />
           Save your time and enjoy the day.
@@ -205,7 +209,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
           <img
             src={heroImage}
             alt="Healthcare professionals"
-            className="w-full h-auto max-w-sm"
+            className="w-full h-auto max-w-xs"
           />
         </div>
       </div>
@@ -213,7 +217,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
   );
 
   const renderForgotPassword = () => (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <button
         onClick={handleBack}
         className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
@@ -247,7 +251,7 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className={`p-6 bg-muted ${isWideModal ? "sm:max-w-4xl" : "sm:max-w-md"}`}>
+      <DialogContent className={`p-6 bg-muted max-h-[90vh] overflow-hidden ${isWideModal ? "sm:max-w-3xl" : "sm:max-w-md"}`}>
         {view === "signIn" && renderSignIn()}
         {view === "register" && renderRegister()}
         {view === "forgotPassword" && renderForgotPassword()}
