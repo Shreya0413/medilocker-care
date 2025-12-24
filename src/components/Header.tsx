@@ -1,12 +1,29 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface HeaderProps {
   onSignIn: () => void;
   onRegister: () => void;
+  activeNav?: string;
 }
 
-const Header = ({ onSignIn, onRegister }: HeaderProps) => {
-  const navItems = ["Profile", "Stock", "Customer", "Payment", "Reports", "Sales"];
+const Header = ({ onSignIn, onRegister, activeNav }: HeaderProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const navItems = [
+    { name: "Profile", path: "/" },
+    { name: "Stock", path: "/stock" },
+    { name: "Customer", path: "/customer" },
+    { name: "Payment", path: "/payment" },
+    { name: "Reports", path: "/" },
+    { name: "Sales", path: "/" },
+  ];
+
+  const isActive = (item: { name: string; path: string }) => {
+    if (activeNav) return activeNav === item.name;
+    return location.pathname === item.path && item.path !== "/";
+  };
 
   return (
     <header className="w-full bg-card border-b border-border">
@@ -18,26 +35,27 @@ const Header = ({ onSignIn, onRegister }: HeaderProps) => {
 
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-sm text-foreground hover:text-primary transition-colors"
+            <button
+              key={item.name}
+              onClick={() => navigate(item.path)}
+              className={`text-sm transition-colors ${
+                isActive(item)
+                  ? "text-primary font-medium"
+                  : "text-foreground hover:text-primary"
+              }`}
             >
-              {item}
-            </a>
+              {item.name}
+            </button>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
           <button
             onClick={onRegister}
-            className="text-sm text-primary hover:text-coral-dark transition-colors font-medium"
+            className="text-sm text-foreground hover:text-primary transition-colors font-medium"
           >
-            Register
+            Log Out
           </button>
-          <Button onClick={onSignIn} size="sm">
-            Sign In
-          </Button>
         </div>
       </div>
     </header>
