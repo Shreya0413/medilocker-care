@@ -16,8 +16,8 @@ const Header = ({ onSignIn, onRegister, activeNav }: HeaderProps) => {
     { name: "Stock", path: "/stock" },
     { name: "Customer", path: "/customer" },
     { name: "Payment", path: "/payment" },
-    { name: "Reports", path: "/" },
-    { name: "Sales", path: "/" },
+    { name: "Reports", path: "/reports" },
+    { name: "Sales", path: "/sales" },
   ];
 
   const isActive = (item: { name: string; path: string }) => {
@@ -52,9 +52,9 @@ const Header = ({ onSignIn, onRegister, activeNav }: HeaderProps) => {
         <div className="flex items-center gap-3">
           <button
             onClick={onRegister}
-            className="text-sm text-foreground hover:text-primary transition-colors font-medium"
+            className="text-sm text-primary hover:text-primary/80 transition-colors font-medium"
           >
-            Log Out
+            Register
           </button>
         </div>
       </div>
