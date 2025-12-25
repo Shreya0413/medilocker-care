@@ -16,87 +16,86 @@ const Payment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header
         onSignIn={() => openAuth("signIn")}
         onRegister={() => openAuth("register")}
         activeNav="Payment"
       />
       
-      <main className="container mx-auto px-4 py-8">
-        <div className="flex gap-6 justify-center">
-          {/* Pricing Table */}
-          <div className="bg-card rounded-lg shadow-sm overflow-hidden">
-            <table className="w-full">
-              <thead>
-                <tr>
-                  <th className="p-4 text-left"></th>
-                  <th className="p-4 text-left">
-                    <div className="text-xs text-muted-foreground uppercase tracking-wide">TRIAL PERIOD</div>
-                    <div className="text-2xl font-bold text-foreground">10 Days Left</div>
-                  </th>
-                  <th className="p-4 text-left">
-                    <div className="text-xs text-muted-foreground uppercase tracking-wide">BUSINESS</div>
-                    <div className="text-2xl font-bold text-foreground">700 <span className="text-sm font-normal">/mo</span></div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-t border-border">
-                  <td className="p-4 font-medium text-foreground">Features</td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                </tr>
-                <tr className="border-t border-border">
-                  <td className="p-4 font-medium text-foreground">Storage</td>
-                  <td className="p-4 text-muted-foreground">100 MB</td>
-                  <td className="p-4 text-muted-foreground">1 GB</td>
-                </tr>
-                <tr className="border-t border-border">
-                  <td className="p-4 font-medium text-foreground">Reports</td>
-                  <td className="p-4 text-muted-foreground">Limited</td>
-                  <td className="p-4 text-muted-foreground">Customization Allowed</td>
-                </tr>
-                <tr className="border-t border-border">
-                  <td className="p-4 font-medium text-foreground">Email Support</td>
-                  <td className="p-4 text-muted-foreground">No</td>
-                  <td className="p-4 text-muted-foreground">Yes</td>
-                </tr>
-                <tr className="border-t border-border">
-                  <td className="p-4 font-medium text-foreground">Call Support</td>
-                  <td className="p-4 text-muted-foreground">No</td>
-                  <td className="p-4 text-muted-foreground">No</td>
-                </tr>
-                <tr className="border-t border-border">
-                  <td className="p-4"></td>
-                  <td className="p-4">
-                    <Button className="bg-primary text-primary-foreground w-full">
-                      Current Plan
-                    </Button>
-                  </td>
-                  <td className="p-4">
-                    <Button className="bg-primary text-primary-foreground w-full">
-                      Upgrade
-                    </Button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      <main className="flex-1 container mx-auto px-4 py-8">
+        <div className="flex flex-wrap gap-6 justify-center items-start">
+          {/* Trial Period Plan */}
+          <div className="bg-card rounded-lg shadow-sm border-2 border-primary p-6 w-72">
+            <div className="text-xs text-primary uppercase tracking-wide font-medium mb-1">TRIAL PERIOD</div>
+            <div className="text-3xl font-bold text-foreground mb-6">10 Days Left</div>
+            
+            <div className="space-y-4 mb-6">
+              <div className="flex justify-between border-b border-border pb-2">
+                <span className="font-medium text-foreground">Storage</span>
+                <span className="text-muted-foreground">100 MB</span>
+              </div>
+              <div className="flex justify-between border-b border-border pb-2">
+                <span className="font-medium text-foreground">Reports</span>
+                <span className="text-muted-foreground">Limited</span>
+              </div>
+              <div className="flex justify-between border-b border-border pb-2">
+                <span className="font-medium text-foreground">Email Support</span>
+                <span className="text-muted-foreground">No</span>
+              </div>
+              <div className="flex justify-between pb-2">
+                <span className="font-medium text-foreground">Call Support</span>
+                <span className="text-muted-foreground">No</span>
+              </div>
+            </div>
+
+            <Button className="w-full">
+              Current Plan
+            </Button>
+          </div>
+
+          {/* Business Plan */}
+          <div className="bg-card rounded-lg shadow-sm border-2 border-primary p-6 w-72">
+            <div className="text-xs text-primary uppercase tracking-wide font-medium mb-1">BUSINESS</div>
+            <div className="text-3xl font-bold text-foreground mb-6">700 <span className="text-lg font-normal">/mo</span></div>
+            
+            <div className="space-y-4 mb-6">
+              <div className="flex justify-between border-b border-border pb-2">
+                <span className="font-medium text-foreground">Storage</span>
+                <span className="text-muted-foreground">1 GB</span>
+              </div>
+              <div className="flex justify-between border-b border-border pb-2">
+                <span className="font-medium text-foreground">Reports</span>
+                <span className="text-muted-foreground">Customization Allowed</span>
+              </div>
+              <div className="flex justify-between border-b border-border pb-2">
+                <span className="font-medium text-foreground">Email Support</span>
+                <span className="text-muted-foreground">Yes</span>
+              </div>
+              <div className="flex justify-between pb-2">
+                <span className="font-medium text-foreground">Call Support</span>
+                <span className="text-muted-foreground">No</span>
+              </div>
+            </div>
+
+            <Button className="w-full">
+              Upgrade
+            </Button>
           </div>
 
           {/* Special Plan */}
-          <div className="bg-card rounded-lg shadow-sm border-2 border-primary p-6 w-64">
-            <div className="text-xs text-primary uppercase tracking-wide mb-2">SPECIAL</div>
+          <div className="bg-card rounded-lg shadow-sm border-2 border-primary p-6 w-72">
+            <div className="text-xs text-primary uppercase tracking-wide font-medium mb-1">SPECIAL</div>
             <div className="text-4xl font-bold text-foreground mb-6">∞</div>
             
-            <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              <li>Unlimited Storage</li>
-              <li>Stock Reports</li>
-              <li>Stock Unavailable Reports</li>
-              <li>Call Support</li>
+            <ul className="space-y-3 text-sm text-muted-foreground mb-6">
+              <li className="border-b border-border pb-2">Unlimited Storage</li>
+              <li className="border-b border-border pb-2">Stock Reports</li>
+              <li className="border-b border-border pb-2">Stock Unavailable Reports</li>
+              <li className="pb-2">Call Support</li>
             </ul>
 
-            <Button className="bg-primary text-primary-foreground w-full mb-4">
+            <Button className="w-full mb-3">
               Call Now
             </Button>
 

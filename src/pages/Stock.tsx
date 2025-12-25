@@ -100,33 +100,33 @@ const Stock = () => {
               <div className="bg-card rounded-lg p-6 shadow-sm border border-border">
                 <h3 className="text-lg font-semibold text-foreground mb-4">Stock Records</h3>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
+                  <table className="w-full text-sm border border-border">
                     <thead>
-                      <tr className="border-b border-border">
-                        <th className="py-3 px-3 text-left font-medium text-foreground">Batch No</th>
-                        <th className="py-3 px-3 text-left font-medium text-foreground">Med Name</th>
-                        <th className="py-3 px-3 text-left font-medium text-foreground">Manf. Name</th>
-                        <th className="py-3 px-3 text-left font-medium text-foreground">Manf Date</th>
-                        <th className="py-3 px-3 text-left font-medium text-foreground">Exp. Date</th>
-                        <th className="py-3 px-3 text-left font-medium text-foreground">Buying Cost</th>
-                        <th className="py-3 px-3 text-left font-medium text-foreground">MRP</th>
-                        <th className="py-3 px-3 text-left font-medium text-foreground">Discount</th>
-                        <th className="py-3 px-3 text-left font-medium text-foreground">Consumer Cost</th>
+                      <tr className="border-b border-border bg-muted/50">
+                        <th className="py-3 px-3 text-left font-medium text-foreground border-r border-border">Batch No</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground border-r border-border">Med Name</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground border-r border-border">Manf. Name</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground border-r border-border">Manf Date</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground border-r border-border">Exp. Date</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground border-r border-border">Buying Cost</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground border-r border-border">MRP</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground border-r border-border">Discount</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground border-r border-border">Consumer Cost</th>
                         <th className="py-3 px-3 text-left font-medium text-foreground">Rx</th>
                       </tr>
                     </thead>
                     <tbody>
                       {dummyRecords.map((record, index) => (
                         <tr key={index} className="border-b border-border hover:bg-muted/50 transition-colors">
-                          <td className="py-3 px-3 text-muted-foreground">{record.batchNo}</td>
-                          <td className="py-3 px-3 text-muted-foreground">{record.medName}</td>
-                          <td className="py-3 px-3 text-muted-foreground">{record.manfName}</td>
-                          <td className="py-3 px-3 text-muted-foreground">{record.manfDate}</td>
-                          <td className="py-3 px-3 text-muted-foreground">{record.expDate}</td>
-                          <td className="py-3 px-3 text-muted-foreground">{record.buyingCost}</td>
-                          <td className="py-3 px-3 text-muted-foreground">{record.mrp}</td>
-                          <td className="py-3 px-3 text-muted-foreground">{record.discountCost}%</td>
-                          <td className="py-3 px-3 text-muted-foreground">{record.consumerCost}</td>
+                          <td className="py-3 px-3 text-muted-foreground border-r border-border">{record.batchNo}</td>
+                          <td className="py-3 px-3 text-muted-foreground border-r border-border">{record.medName}</td>
+                          <td className="py-3 px-3 text-muted-foreground border-r border-border">{record.manfName}</td>
+                          <td className="py-3 px-3 text-muted-foreground border-r border-border">{record.manfDate}</td>
+                          <td className="py-3 px-3 text-muted-foreground border-r border-border">{record.expDate}</td>
+                          <td className="py-3 px-3 text-muted-foreground border-r border-border">{record.buyingCost}</td>
+                          <td className="py-3 px-3 text-muted-foreground border-r border-border">{record.mrp}</td>
+                          <td className="py-3 px-3 text-muted-foreground border-r border-border">{record.discountCost}%</td>
+                          <td className="py-3 px-3 text-muted-foreground border-r border-border">{record.consumerCost}</td>
                           <td className="py-3 px-3 text-muted-foreground">{record.prescription}</td>
                         </tr>
                       ))}
