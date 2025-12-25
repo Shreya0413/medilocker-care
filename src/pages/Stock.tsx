@@ -27,139 +27,140 @@ const Stock = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header
         onSignIn={() => openAuth("signIn")}
         onRegister={() => openAuth("register")}
         activeNav="Stock"
       />
       
-      <main className="container mx-auto px-4 py-6">
-        <div className="flex gap-8">
-          {/* Left Panel */}
-          <div className="flex-1">
+      <main className="flex-1 container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          {/* Left Panel - Main Content */}
+          <div className="lg:col-span-2 space-y-6">
             {/* Action Buttons */}
-            <div className="flex gap-4 mb-6">
+            <div className="flex flex-wrap gap-3">
               <Button 
                 onClick={() => setStockView("add")}
-                className={`${stockView === "add" ? "bg-primary" : "bg-primary/80"} text-primary-foreground`}
+                variant={stockView === "add" ? "default" : "secondary"}
+                className="flex items-center gap-2"
               >
-                Add Record <Plus className="ml-2 h-4 w-4" />
+                <Plus className="h-4 w-4" />
+                Add Record
               </Button>
               <Button 
                 onClick={() => setStockView("view")}
-                className={`${stockView === "view" ? "bg-primary" : "bg-primary/80"} text-primary-foreground`}
+                variant={stockView === "view" ? "default" : "secondary"}
+                className="flex items-center gap-2"
               >
-                View Record <Eye className="ml-2 h-4 w-4" />
+                <Eye className="h-4 w-4" />
+                View Record
               </Button>
               <Button 
                 onClick={() => setStockView("sell")}
-                className={`${stockView === "sell" ? "bg-primary" : "bg-primary/80"} text-primary-foreground`}
+                variant={stockView === "sell" ? "default" : "secondary"}
+                className="flex items-center gap-2"
               >
-                Sell <ShoppingCart className="ml-2 h-4 w-4" />
+                <ShoppingCart className="h-4 w-4" />
+                Sell
               </Button>
             </div>
 
             {/* Content based on view */}
             {stockView === "add" && (
-              <div className="space-y-4 max-w-xl">
-                <div className="grid grid-cols-3 gap-4">
-                  <Input placeholder="Batch No" className="bg-muted border-0" />
-                  <Input placeholder="Med Name" className="bg-muted border-0" />
-                  <Input placeholder="Manf. Name" className="bg-muted border-0" />
+              <div className="bg-card rounded-lg p-6 shadow-sm border border-border">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Add New Stock Record</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <Input placeholder="Batch No" className="bg-muted" />
+                  <Input placeholder="Med Name" className="bg-muted" />
+                  <Input placeholder="Manf. Name" className="bg-muted" />
+                  <Input placeholder="Manf. Date" className="bg-muted" />
+                  <Input placeholder="Exp. Date" className="bg-muted" />
+                  <Input placeholder="Buying Cost" className="bg-muted" />
+                  <Input placeholder="MRP" className="bg-muted" />
+                  <Input placeholder="Discount Cost" className="bg-muted" />
+                  <Input placeholder="Consumer Cost" className="bg-muted" />
+                  <Input placeholder="Prescription Needed" className="bg-muted" />
+                  <Input placeholder="Seller Id" className="bg-muted" />
+                  <Input placeholder="Seller Name" className="bg-muted" />
+                  <Input placeholder="Category" className="bg-muted" />
+                  <Input placeholder="Client ID" className="bg-muted" />
+                  <Input placeholder="Date of Entry" className="bg-muted" />
+                  <Input placeholder="Date of Dispatch" className="bg-muted" />
+                  <Input placeholder="Qty" className="bg-muted" />
+                  <Input placeholder="Type of Medicine" className="bg-muted" />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="Manf. Date" className="bg-muted border-0" />
-                  <Input placeholder="Exp. Date" className="bg-muted border-0" />
-                </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <Input placeholder="Buying Cost" className="bg-muted border-0" />
-                  <Input placeholder="MRP" className="bg-muted border-0" />
-                  <Input placeholder="Discount Cost" className="bg-muted border-0" />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="Consumer Cost" className="bg-muted border-0" />
-                  <Input placeholder="Prescription Needed" className="bg-muted border-0" />
-                </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <Input placeholder="Seller Id" className="bg-muted border-0" />
-                  <Input placeholder="Seller Name" className="bg-muted border-0" />
-                  <Input placeholder="Category" className="bg-muted border-0" />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="Client ID" className="bg-muted border-0" />
-                  <Input placeholder="Date of Entry" className="bg-muted border-0" />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="Date of Dispatch" className="bg-muted border-0" />
-                  <Input placeholder="Qty" className="bg-muted border-0" />
-                </div>
-                <Input placeholder="Type of Medicine" className="bg-muted border-0" />
-                <Button className="w-full bg-primary text-primary-foreground">
+                <Button className="w-full mt-6">
                   SAVE
                 </Button>
               </div>
             )}
 
             {stockView === "view" && (
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="text-left text-foreground font-medium">
-                      <th className="py-2 px-2">Batch No</th>
-                      <th className="py-2 px-2">Med Name</th>
-                      <th className="py-2 px-2">Manf.Name</th>
-                      <th className="py-2 px-2">Manf Date</th>
-                      <th className="py-2 px-2">Exp. Date</th>
-                      <th className="py-2 px-2">Buying Cost</th>
-                      <th className="py-2 px-2">MRP</th>
-                      <th className="py-2 px-2">Discount Cost</th>
-                      <th className="py-2 px-2">Consumer Cost</th>
-                      <th className="py-2 px-2">Prescription</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {dummyRecords.map((record, index) => (
-                      <tr key={index} className="text-muted-foreground border-t border-border">
-                        <td className="py-3 px-2">{record.batchNo}</td>
-                        <td className="py-3 px-2">{record.medName}</td>
-                        <td className="py-3 px-2">{record.manfName}</td>
-                        <td className="py-3 px-2">{record.manfDate}</td>
-                        <td className="py-3 px-2">{record.expDate}</td>
-                        <td className="py-3 px-2">{record.buyingCost}</td>
-                        <td className="py-3 px-2">{record.mrp}</td>
-                        <td className="py-3 px-2">{record.discountCost}</td>
-                        <td className="py-3 px-2">{record.consumerCost}</td>
-                        <td className="py-3 px-2">{record.prescription}</td>
+              <div className="bg-card rounded-lg p-6 shadow-sm border border-border">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Stock Records</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border">
+                        <th className="py-3 px-3 text-left font-medium text-foreground">Batch No</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground">Med Name</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground">Manf. Name</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground">Manf Date</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground">Exp. Date</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground">Buying Cost</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground">MRP</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground">Discount</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground">Consumer Cost</th>
+                        <th className="py-3 px-3 text-left font-medium text-foreground">Rx</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {dummyRecords.map((record, index) => (
+                        <tr key={index} className="border-b border-border hover:bg-muted/50 transition-colors">
+                          <td className="py-3 px-3 text-muted-foreground">{record.batchNo}</td>
+                          <td className="py-3 px-3 text-muted-foreground">{record.medName}</td>
+                          <td className="py-3 px-3 text-muted-foreground">{record.manfName}</td>
+                          <td className="py-3 px-3 text-muted-foreground">{record.manfDate}</td>
+                          <td className="py-3 px-3 text-muted-foreground">{record.expDate}</td>
+                          <td className="py-3 px-3 text-muted-foreground">{record.buyingCost}</td>
+                          <td className="py-3 px-3 text-muted-foreground">{record.mrp}</td>
+                          <td className="py-3 px-3 text-muted-foreground">{record.discountCost}%</td>
+                          <td className="py-3 px-3 text-muted-foreground">{record.consumerCost}</td>
+                          <td className="py-3 px-3 text-muted-foreground">{record.prescription}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             )}
 
             {stockView === "sell" && (
-              <div className="space-y-4 max-w-md">
-                <Input placeholder="Medicine Name" className="bg-muted border-0" />
-                <Input placeholder="Medicine Manf." className="bg-muted border-0" />
-                <Input placeholder="Seller Name" className="bg-muted border-0" />
-                <Input placeholder="Type of Medicine" className="bg-muted border-0" />
-                <Input placeholder="QTY" className="bg-muted border-0" />
-                <Button className="w-full bg-primary text-primary-foreground">
-                  Go
-                </Button>
+              <div className="bg-card rounded-lg p-6 shadow-sm border border-border max-w-md">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Sell Medicine</h3>
+                <div className="space-y-4">
+                  <Input placeholder="Medicine Name" className="bg-muted" />
+                  <Input placeholder="Medicine Manf." className="bg-muted" />
+                  <Input placeholder="Seller Name" className="bg-muted" />
+                  <Input placeholder="Type of Medicine" className="bg-muted" />
+                  <Input placeholder="QTY" className="bg-muted" />
+                  <Button className="w-full">
+                    Go
+                  </Button>
+                </div>
               </div>
             )}
           </div>
 
           {/* Right Panel - Hero */}
-          <div className="hidden lg:block w-96 text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-2">StockEasy</h2>
-            <p className="text-muted-foreground mb-6">
+          <div className="hidden lg:flex flex-col items-center text-center bg-card rounded-lg p-6 shadow-sm border border-border">
+            <h2 className="text-2xl font-bold text-foreground mb-2">StockEasy</h2>
+            <p className="text-muted-foreground text-sm mb-4">
               Now it is very easy to maintain stock.<br />
               Save your time and enjoy the day.
             </p>
-            <img src={heroImage} alt="Doctors illustration" className="w-full" />
+            <img src={heroImage} alt="Doctors illustration" className="w-full max-w-[280px]" />
           </div>
         </div>
       </main>
