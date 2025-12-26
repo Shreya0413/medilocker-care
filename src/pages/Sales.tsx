@@ -155,7 +155,7 @@ const Sales = () => {
 
           {/* Right Side - Branding */}
           <div className="lg:w-72 flex flex-col items-center justify-start pt-8">
-            <h2 className="text-2xl font-bold text-foreground mb-2">StockEasy</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-2">MediVault</h2>
             <p className="text-sm text-muted-foreground text-center mb-4">
               Now it is very easy to maintain stock.
               <br />
