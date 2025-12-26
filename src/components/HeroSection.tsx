@@ -12,7 +12,7 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
           <div className="flex-1 max-w-md">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-              StockEasy
+              MediVault
             </h1>
             <p className="text-muted-foreground text-base mb-4">
               Now it is very easy to maintain stock.

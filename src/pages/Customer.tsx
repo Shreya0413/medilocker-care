@@ -108,7 +108,7 @@ const Customer = () => {
 
           {/* Right Panel - Hero */}
           <div className="hidden lg:block w-96 text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-2">StockEasy</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-2">MediVault</h2>
             <p className="text-muted-foreground mb-6">
               Now it is very easy to maintain stock.<br />
               Save your time and enjoy the day.

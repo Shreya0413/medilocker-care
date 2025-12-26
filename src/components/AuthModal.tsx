@@ -40,8 +40,8 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
 
       <div>
         <h2 className="text-2xl font-bold">
-          <span className="text-foreground">Stock</span>
-          <span className="text-primary">Easy</span>
+          <span className="text-foreground">Medi</span>
+          <span className="text-primary">Vault</span>
         </h2>
         <p className="text-muted-foreground text-sm mt-2">
           Now it is very easy to maintain stock.
@@ -197,8 +197,8 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
 
       <div className="hidden lg:flex flex-col justify-center flex-1">
         <h2 className="text-2xl font-bold mb-2">
-          <span className="text-foreground">Stock</span>
-          <span className="text-primary">Easy</span>
+          <span className="text-foreground">Medi</span>
+          <span className="text-primary">Vault</span>
         </h2>
         <p className="text-muted-foreground text-sm mb-4">
           Now it is very easy to maintain stock.
@@ -228,8 +228,8 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
 
       <div>
         <h2 className="text-2xl font-bold">
-          <span className="text-foreground">Stock</span>
-          <span className="text-primary">Easy</span>
+          <span className="text-foreground">Medi</span>
+          <span className="text-primary">Vault</span>
         </h2>
         <p className="text-muted-foreground text-sm mt-2">
           Now it is very easy to maintain stock.

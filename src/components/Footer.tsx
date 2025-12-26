@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-muted py-8">
       <div className="container mx-auto px-4 text-center">
         <p className="text-muted-foreground text-sm mb-4">
-          © Copyright - StockEasy
+          © Copyright - MediVault
         </p>
         <div className="flex justify-center gap-4">
           <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

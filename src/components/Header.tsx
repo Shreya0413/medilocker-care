@@ -30,7 +30,7 @@ const Header = ({ onSignIn, onRegister, activeNav }: HeaderProps) => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-primary" />
-          <span className="text-xl font-bold text-foreground">StockEasy</span>
+          <span className="text-xl font-bold text-foreground">MediVault</span>
         </div>
 
         <nav className="hidden md:flex items-center gap-6">

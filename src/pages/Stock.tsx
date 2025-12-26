@@ -155,7 +155,7 @@ const Stock = () => {
 
           {/* Right Panel - Hero */}
           <div className="hidden lg:flex flex-col items-center text-center bg-card rounded-lg p-6 shadow-sm border border-border">
-            <h2 className="text-2xl font-bold text-foreground mb-2">StockEasy</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-2">MediVault</h2>
             <p className="text-muted-foreground text-sm mb-4">
               Now it is very easy to maintain stock.<br />
               Save your time and enjoy the day.
