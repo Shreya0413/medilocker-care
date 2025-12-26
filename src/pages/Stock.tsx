@@ -35,37 +35,37 @@ const Stock = () => {
       />
       
       <main className="flex-1 container mx-auto px-4 py-6">
+        {/* Action Buttons */}
+        <div className="flex flex-wrap gap-3 mb-4">
+          <Button 
+            onClick={() => setStockView("add")}
+            variant={stockView === "add" ? "default" : "secondary"}
+            className="flex items-center gap-2"
+          >
+            <Plus className="h-4 w-4" />
+            Add Record
+          </Button>
+          <Button 
+            onClick={() => setStockView("view")}
+            variant={stockView === "view" ? "default" : "secondary"}
+            className="flex items-center gap-2"
+          >
+            <Eye className="h-4 w-4" />
+            View Record
+          </Button>
+          <Button 
+            onClick={() => setStockView("sell")}
+            variant={stockView === "sell" ? "default" : "secondary"}
+            className="flex items-center gap-2"
+          >
+            <ShoppingCart className="h-4 w-4" />
+            Sell
+          </Button>
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Left Panel - Main Content */}
-          <div className="flex-1 space-y-4">
-            {/* Action Buttons */}
-            <div className="flex flex-wrap gap-3">
-              <Button 
-                onClick={() => setStockView("add")}
-                variant={stockView === "add" ? "default" : "secondary"}
-                className="flex items-center gap-2"
-              >
-                <Plus className="h-4 w-4" />
-                Add Record
-              </Button>
-              <Button 
-                onClick={() => setStockView("view")}
-                variant={stockView === "view" ? "default" : "secondary"}
-                className="flex items-center gap-2"
-              >
-                <Eye className="h-4 w-4" />
-                View Record
-              </Button>
-              <Button 
-                onClick={() => setStockView("sell")}
-                variant={stockView === "sell" ? "default" : "secondary"}
-                className="flex items-center gap-2"
-              >
-                <ShoppingCart className="h-4 w-4" />
-                Sell
-              </Button>
-            </div>
-
+          <div className="flex-1">
             {/* Content based on view */}
             {stockView === "add" && (
               <div className="bg-card rounded-lg p-6 shadow-sm border border-border">

@@ -29,7 +29,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-16 bg-card">
+    <section className="py-8 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
