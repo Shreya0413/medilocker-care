@@ -34,10 +34,10 @@ const Stock = () => {
         activeNav="Stock"
       />
       
-      <main className="flex-1 container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      <main className="flex-1 container mx-auto px-4 py-6">
+        <div className="flex flex-col lg:flex-row gap-6">
           {/* Left Panel - Main Content */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="flex-1 space-y-4">
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-3">
               <Button 
@@ -154,13 +154,13 @@ const Stock = () => {
           </div>
 
           {/* Right Panel - Hero */}
-          <div className="hidden lg:flex flex-col items-center text-center bg-card rounded-lg p-6 shadow-sm border border-border">
+          <div className="hidden lg:flex flex-col items-center text-center bg-card rounded-lg p-6 shadow-sm border border-border w-80 self-start">
             <h2 className="text-2xl font-bold text-foreground mb-2">MediVault</h2>
             <p className="text-muted-foreground text-sm mb-4">
               Now it is very easy to maintain stock.<br />
               Save your time and enjoy the day.
             </p>
-            <img src={heroImage} alt="Doctors illustration" className="w-full max-w-[360px]" />
+            <img src={heroImage} alt="Doctors illustration" className="w-full" />
           </div>
         </div>
       </main>
