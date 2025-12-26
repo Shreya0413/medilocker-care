@@ -160,7 +160,7 @@ const Stock = () => {
               Now it is very easy to maintain stock.<br />
               Save your time and enjoy the day.
             </p>
-            <img src={heroImage} alt="Doctors illustration" className="w-full max-w-[280px]" />
+            <img src={heroImage} alt="Doctors illustration" className="w-full max-w-[360px]" />
           </div>
         </div>
       </main>
