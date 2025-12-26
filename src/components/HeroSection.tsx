@@ -9,8 +9,8 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
   return (
     <section className="bg-hero-bg py-8 md:py-12">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
-          <div className="flex-1 max-w-md">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+          <div className="max-w-md">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               MediVault
             </h1>
@@ -24,8 +24,8 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
             </Button>
           </div>
 
-          <div className="flex-1 flex justify-center md:justify-end">
-            <div className="rounded-lg overflow-hidden shadow-lg max-w-xs w-full">
+          <div className="flex justify-center">
+            <div className="rounded-lg overflow-hidden shadow-lg w-80 md:w-96">
               <img
                 src={heroImage}
                 alt="Healthcare professionals illustration"
