@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
   return (
-    <section className="bg-hero-bg py-8 md:py-12">
+    <section className="bg-hero-bg py-6 md:py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
           <div className="max-w-md">
