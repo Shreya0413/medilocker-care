@@ -160,9 +160,9 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
                 <Input label="Pan Card Number" placeholder="Pan Card Number" />
               </div>
 
-              <Input label="Admin Email Id" placeholder="Admin Email Id" type="email" />
+              <Input label="User Email Id" placeholder="User Email Id" type="email" />
               <Input label="Phone Number" placeholder="Phone Number" type="tel" />
-              <Input label="Admin Password" placeholder="Create Admin Password" type="password" />
+              <Input label="User Password" placeholder="Create User Password" type="password" />
               <Input label="Admin Access Code" placeholder="Enter Admin Access Code" type="text" />
             </>
           ) : (
