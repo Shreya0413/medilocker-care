@@ -155,15 +155,15 @@ const AuthModal = ({ isOpen, onClose, initialView = "signIn" }: AuthModalProps) 
 
           {userType === "user" ? (
             <>
-              <div className="grid grid-cols-3 gap-2">
-                <Input label="Country" placeholder="Country" />
-                <Input label="City" placeholder="City" />
-                <Input label="State" placeholder="State" />
+              <div className="grid grid-cols-2 gap-2">
+                <Input label="GST Number" placeholder="GST Number" />
+                <Input label="Pan Card Number" placeholder="Pan Card Number" />
               </div>
 
-              <Input label="Email Id" placeholder="Email Id" type="email" />
+              <Input label="Admin Email Id" placeholder="Admin Email Id" type="email" />
               <Input label="Phone Number" placeholder="Phone Number" type="tel" />
-              <Input label="Password" placeholder="Create Password" type="password" />
+              <Input label="Admin Password" placeholder="Create Admin Password" type="password" />
+              <Input label="Admin Access Code" placeholder="Enter Admin Access Code" type="text" />
             </>
           ) : (
             <>
